@@ -1,0 +1,59 @@
+{
+  "name": "rapid-indexer-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for Rapid Indexer: submit URLs to Googlebot, check index status and manage traffic campaigns from Claude, Cursor, ChatGPT and other MCP hosts.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://rapid-indexer.com/api-docs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-indexer/rapid-indexer-mcp"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rapid-indexer",
+    "google-indexing",
+    "seo",
+    "indexing",
+    "claude",
+    "cursor"
+  ],
+  "bin": {
+    "rapid-indexer-mcp": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
