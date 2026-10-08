@@ -1,0 +1,10 @@
+{
+  "name": "rapid-indexer",
+  "version": "0.1.0",
+  "mcpServers": {
+    "rapid-indexer": {
+      "httpUrl": "https://mcp.rapid-indexer.com/mcp",
+      "headers": { "Authorization": "Bearer $RAPID_INDEXER_API_KEY" }
+    }
+  }
+}
